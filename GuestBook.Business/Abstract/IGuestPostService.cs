@@ -10,10 +10,10 @@ namespace GuestBook.Business.Abstract
 {
     public interface IGuestPostService
     {
-        GuestPostListDto GetAll();
+        List<GuestPostListDto> GetAll();
         GuestPostDto GetById(int id);
         GuestPostDto Add(GuestPostCreateDto guestPost);
         GuestPostDto Update(GuestPostUpdateDto guestPost);
-        void DeleteById(int id);
+        void Delete(int id);
     }
 }

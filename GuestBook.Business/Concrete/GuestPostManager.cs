@@ -30,7 +30,7 @@ namespace GuestBook.Business.Concrete
         public GuestPostDto Add(GuestPostCreateDto guestPost)
         {
             var validate = _createValidator.Validate(guestPost);
-            if(validate.IsValid)
+            if (validate.IsValid)
             {
                 var data = _guestPostDal.Add(_mapper.Map<GuestPost>(guestPost));
                 return _mapper.Map<GuestPostDto>(data);
@@ -38,7 +38,7 @@ namespace GuestBook.Business.Concrete
             return null;
         }
 
-        public void DeleteById(int id)
+        public void Delete(int id)
         {
             var data = _guestPostDal.GetById(id);
             if (data != null)
@@ -46,10 +46,27 @@ namespace GuestBook.Business.Concrete
 
         }
 
-        public GuestPostListDto GetAll()
+        public List<GuestPostListDto> GetAll()
         {
-           var list = _guestPostDal.GetAll();
-            return _mapper.Map<GuestPostListDto>(list);
+            var list = _guestPostDal.GetAll();
+            // var result = _mapper.Map<IEnumerable<GuestPostListDto>(list);
+            var data = new List<GuestPostListDto>();
+
+            foreach (var item in list)
+            {
+                data.Add(new GuestPostListDto
+                {
+                    CreatedDate = item.CreatedDate, 
+                    Email = item.Email, 
+                    Id = item.Id,   
+                    LastName = item.LastName,   
+                    Name = item.Name,   
+                    PostContent = item.PostContent,
+                });
+            }
+
+            return data;        
+
         }
 
         public GuestPostDto GetById(int id)
@@ -63,7 +80,7 @@ namespace GuestBook.Business.Concrete
         public GuestPostDto Update(GuestPostUpdateDto guestPost)
         {
             var valid = _updateValidator.Validate(guestPost);
-            if(valid.IsValid)
+            if (valid.IsValid)
             {
                 var entitiy = _mapper.Map<GuestPost>(guestPost);
                 var addEntity = _guestPostDal.Add(entitiy);
@@ -71,7 +88,7 @@ namespace GuestBook.Business.Concrete
                 return _mapper.Map<GuestPostDto>(addEntity);
 
             }
-            return null;   
+            return null;
 
         }
     }
