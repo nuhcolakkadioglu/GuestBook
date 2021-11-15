@@ -4,7 +4,7 @@ namespace GuestBook.Entities.Concrete
 {
     public class GuestPost:IEntity
     {
-       
+       //ben zaten masterde vardım
         public int Id { get; set; }
         public string Name { get; set; } 
         public string LastName { get; set; } 
