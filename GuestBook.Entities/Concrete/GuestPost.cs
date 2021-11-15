@@ -12,6 +12,9 @@ namespace GuestBook.Entities.Concrete
         public string PostContent { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         //ben nuh materden geldiö
+        //ben burada çalıştım 
+        //biraz adha çalıştım
+        //bugün çok çalıştırm
     
     }
 }
