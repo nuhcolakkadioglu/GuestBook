@@ -1,9 +1,4 @@
 ﻿using GuestBook.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GuestBook.Entities.Concrete
 {
@@ -17,6 +12,10 @@ namespace GuestBook.Entities.Concrete
         public string PostContent { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         //test data
+
+
+        //data veri gelsin
+        //*/commit test etsin 
     
     }
 }
