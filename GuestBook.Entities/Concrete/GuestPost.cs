@@ -4,17 +4,14 @@ namespace GuestBook.Entities.Concrete
 {
     public class GuestPost:IEntity
     {
-       //ben zaten masterde vardım
+      
         public int Id { get; set; }
         public string Name { get; set; } 
         public string LastName { get; set; } 
         public string Email { get; set; }
         public string PostContent { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        //ben nuh materden geldiö
-        //ben burada çalıştım 
-        //biraz adha çalıştım
-        //bugün çok çalıştırm
-    
+        //ben master 
+        //dneemee
     }
 }
