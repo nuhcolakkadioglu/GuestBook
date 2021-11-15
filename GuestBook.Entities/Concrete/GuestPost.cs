@@ -11,11 +11,7 @@ namespace GuestBook.Entities.Concrete
         public string Email { get; set; }
         public string PostContent { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        //test data
-
-
-        //data veri gelsin
-        //*/commit test etsin 
+   
     
     }
 }
